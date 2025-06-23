@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+// import {TrustChainFooter} from "./Trustchaincomponents/Footer";
+import TrustChainFooter from "./Trustchaincomponents/Footer";
+import TrustChainNavbar from "./Trustchaincomponents/NewNavbar";
 import { RainbowKitProvider, darkTheme, lightTheme } from "@rainbow-me/rainbowkit";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
@@ -20,8 +23,10 @@ const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
     <>
       <div className={`flex flex-col min-h-screen `}>
         <Header />
+        <TrustChainNavbar />
         <main className="relative flex flex-col flex-1">{children}</main>
         <Footer />
+        <TrustChainFooter />
       </div>
       <Toaster />
     </>
